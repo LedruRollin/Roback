@@ -1,0 +1,17 @@
+{% extends 'firstapp/base.html' %}
+
+{% block content %}
+
+<h1>Search target : {{ search_target.search_text }} </h1>
+
+<ul>
+  <li>Date d'insertion : {{ search_target.insertion_date }}/{{ search_target.insertion_time }}</li>
+  <li>Origine : {{ search_target.origin }}</li>
+  <li>URL : {{ search_target.url }}</li>
+  {% if search_target.media %} 
+    <li>Image : {{ search_target.media.name }}</li>
+    <img src="{{ search_target.media.url }}" width=100px> 
+  {% endif %}
+ </ul>
+
+{% endblock %}

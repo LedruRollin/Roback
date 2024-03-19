@@ -1,0 +1,14 @@
+{% extends 'firstapp/base.html' %}
+
+{% block content %}
+
+<p>Ajouter un nouveau texte</p>
+
+<form enctype="multipart/form-data" action="" method="post">
+{% comment %} <form action="" method="post"> {% endcomment %}
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Envoyer">
+</form>
+
+{% endblock %}
