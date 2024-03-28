@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,11 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'firstapp',
+    'search_targets',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', # Line from cors headers module
+    'corsheaders.middleware.CorsMiddleware', # CORS headers module
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -135,7 +136,7 @@ REST_FRAMEWORK = {
 
 
 # Custom media URL
-MEDIA_URL = "H:/DjangoDB/Roback/"
+MEDIA_URL = os.environ["MEDIA_URL"]
 MEDIA_ROOT = Path(BASE_DIR,  MEDIA_URL)
 
 # Accepted extensions for file uploads

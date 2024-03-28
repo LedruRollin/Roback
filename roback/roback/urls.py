@@ -18,22 +18,18 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from firstapp import views
-
 from rest_framework import routers
 
+from search_targets import views as search_target_views
+
+
 router = routers.SimpleRouter()
-router.register("search_targets", views.SearchTargetAPIView, basename="search_targets")
-router.register("medias", views.MediaAPIView, basename="medias")
+router.register("search_targets", search_target_views.SearchTargetAPIView, basename="search_targets")
+router.register("medias", search_target_views.MediaAPIView, basename="medias")
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-#     path('liste/', views.hello),
-#     path('liste/<int:search_target_id>/', views.search_target_unique, name="search-target-unique"),
-#     path('liste/<int:search_target_id>/edit', views.edit_search_target, name="edit-search-target"),
-#     path('liste-add/', views.add_search_target, name="add-search-target"),
-#     path('target-created/', views.search_target_created, name="target-created"),
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include(router.urls)),
 ]
