@@ -14,3 +14,4 @@ class URLAdmin(admin.ModelAdmin):
 admin.site.register(SearchTarget, SearchTargetAdmin)
 admin.site.register(Media, MediaAdmin)
 admin.site.register(URL, URLAdmin)
+

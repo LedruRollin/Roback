@@ -1,0 +1,82 @@
+[
+  {
+    "search_text":  "Connaître Git en entreprise est quasiment indispensable pour collaborer en équipe !\n\nJ'ai trouvé ce site https://t.co/Hy7b274KNC qui permet d'aider à comprendre le concept des branches sous Git !\n\nTrès complet à faire même si on connaît déjà bien Git ! \uD83D\uDC40 https://t.co/B3e2D4JXw3",
+    "origin": "Twitter",
+    "original_url": "https://twitter.com/guillaume_rygn/status/1766757781741199833",
+    "medias": [
+      {
+        "name": "git",
+        "filename": "fe529aa1-ada8-4d82-b3ae-27964876524f.png",
+        "type": "IMAGE"
+      }
+    ],
+    "urls": [
+      "https://t.co/Hy7b274KNC",
+      "https://t.co/B3e2D4JXw3"
+    ]
+  },
+  {
+    "search_text":  "J'ai découvert un site qui regroupe pleins de layout en css \uD83D\uDC40 \nCertains sont un peu gadget mais d autres sont extrêmement utile mais c'est toujours intéressant de voir comment c'est construit! \nle site c'est https://t.co/mtZ6R1dCSf ! https://t.co/zELEC4uPUD",
+    "origin": "Twitter",
+    "original_url": "https://twitter.com/guillaume_rygn/status/1766390485193535527",
+    "medias": [
+      {
+        "name": "css_layout",
+        "filename": "4c1645aa-6222-427f-8327-5bd61b004cac.png",
+        "type": "IMAGE"
+      }
+    ],
+    "urls": [
+      "https://t.co/mtZ6R1dCSf",
+      "https://t.co/zELEC4uPUD"
+    ]
+  },
+  {
+    "search_text": "Securing REST APIs\n\nIt is important to make sure that only approved users and applications can access or make changes to resources in our API.\n\nHere are some common was to secure REST APIs:\n\n1. \uD835\uDDD5\uD835\uDDEE\uD835\uDE00\uD835\uDDF6\uD835\uDDF0 \uD835\uDDD4\uD835\uDE02\uD835\uDE01\uD835\uDDF5\uD835\uDDF2\uD835\uDDFB\uD835\uDE01\uD835\uDDF6\uD835\uDDF0\uD835\uDDEE\uD835\uDE01\uD835\uDDF6\uD835\uDDFC\uD835\uDDFB\n\nThis sends a username and password with each request to the API. It’s straightforward, but not very secure unless used witn encryption like HTTPS.\n\nGood for simpler apps where advanced security is not critical. Should be combined with encrypted connections.\n\n2. \uD835\uDDE7\uD835\uDDFC\uD835\uDDF8\uD835\uDDF2\uD835\uDDFB \uD835\uDDD4\uD835\uDE02\uD835\uDE01\uD835\uDDF5\uD835\uDDF2\uD835\uDDFB\uD835\uDE01\uD835\uDDF6\uD835\uDDF0\uD835\uDDEE\uD835\uDE01\uD835\uDDF6\uD835\uDDFC\uD835\uDDFB\n\nThis uses tokens, like JSON Web Tokens (JWT), that are exchanged between the client app and server. Login information is not sent with each request.\n\nBetter for more secure and scalable apps where not sending credentials each time is essential.\n\n3. \uD835\uDDE2\uD835\uDDFD\uD835\uDDF2\uD835\uDDFB\uD835\uDDDC\uD835\uDDD7 \uD835\uDDD6\uD835\uDDFC\uD835\uDDFB\uD835\uDDFB\uD835\uDDF2\uD835\uDDF0\uD835\uDE01 \uD835\uDDEE\uD835\uDDFB\uD835\uDDF1 \uD835\uDDE2\uD835\uDDD4\uD835\uDE02\uD835\uDE01\uD835\uDDF5\n\nThese allow limited third-party access to user data without exposing passwords. OpenID Connect handles user authentication and OAuth handles authorization.\n\nPerfect when third-party services need controlled access to user data, like when integrating with Google, Facebook, or Twitter.\n\n4. \uD835\uDDD4\uD835\uDDE3\uD835\uDDDC \uD835\uDDDE\uD835\uDDF2\uD835\uDE06 \uD835\uDDD4\uD835\uDE02\uD835\uDE01\uD835\uDDF5\uD835\uDDF2\uD835\uDDFB\uD835\uDE01\uD835\uDDF6\uD835\uDDF0\uD835\uDDEE\uD835\uDE01\uD835\uDDF6\uD835\uDDFC\uD835\uDDFB\n\nThis gives unique keys to users or apps which are sent in request headers or query parameters. Simple to implement but may not be as robust as token or OAuth methods.\n\nGood for basic access control when security needs are moderate. Allows access to specific API functionalities without complex user permissions.\n\nSecuring our API should be a top concern. The method chosen should match the sensitivity of the data and required protection level.\n\n–\nSubscribe to our weekly newsletter to get a Free System Design PDF (158 pages): https://t.co/kNfv0DVDdf",
+    "origin": "Twitter",
+    "original_url": "https://twitter.com/sahnlam/status/1761992208247599249",
+    "medias": [
+      {
+        "name": "safe_rest_api",
+        "filename": "704896f3-c2d2-487c-ba37-ec63bd406a18.png",
+        "type": "IMAGE"
+      }
+    ],
+    "urls": [
+      "https://t.co/kNfv0DVDdf"
+    ]
+  },
+  {
+    "search_text": "\uD835\uDDD7\uD835\uDDF2\uD835\uDE00\uD835\uDDF6\uD835\uDDF4\uD835\uDDFB \uD835\uDDE3\uD835\uDDEE\uD835\uDE01\uD835\uDE01\uD835\uDDF2\uD835\uDDFF\uD835\uDDFB\uD835\uDE00 \uD835\uDDE4\uD835\uDE02\uD835\uDDF6\uD835\uDDF0\uD835\uDDF8 \uD835\uDDE5\uD835\uDDF2\uD835\uDDF3\uD835\uDDF2\uD835\uDDFF\uD835\uDDF2\uD835\uDDFB\uD835\uDDF0\uD835\uDDF2\n\nIf you need a short cheat sheet on design patterns, you can download it from here.\n\nCredits: Jason McDonald.\n\n#softwaredesign #developers https://t.co/EdTJamfmGD",
+    "origin": "Twitter",
+    "original_url": "https://twitter.com/milan_milanovic/status/1746902249559748681",
+    "medias": [
+      {
+        "name": "design_patterns_1",
+        "filename": "553008e2-a9cf-4672-ae76-41bc513b8254.png",
+        "type": "IMAGE"
+      },
+      {
+        "name": "design_patterns_2",
+        "filename": "efe9752b-e504-4f1b-9603-8ae0940b988e.png",
+        "type": "IMAGE"
+      }
+    ],
+    "urls": [
+      "https://t.co/EdTJamfmGD"
+    ]
+  },
+  {
+    "search_text": "How can you design secure access to your Web APIs?\n\nWeb API access must ensure the users are who they claim to be.\n\nThere are two popular authentication methods: token-based and HMAC.\n\nToken-based authentication starts with a user typing their password. The password is sent to a specific server for authentication. This server checks the password, and if it's correct, it creates a token. Think of the token as a temporary ID card with an expiry date.\n\nWhen the user wants a resource from the server, it uses a token to authenticate. The server receives the token in the HTTP request header, checking if it is not expired. As long as the token hasn't expired, the server allows access.\n\nHMAC is an acronym for Hash-based Message Authentication Code. The server creates a pair of keys: public (APP ID) and secret (API KEY). The user uses these keys and other attributes to generate a unique code or HMAC.\n\nWhen the client requests something from the server, it attaches the HMAC code. The server extracts the attributes from the request and creates its own HMAC code. The server compares its HMAC with the one the client sent. If they match, the request is genuine.\n\nHMAC ensures data integrity by using the same private key on both the client and server side to generate and verify the signature.\n\nSo, if data were tampered with in transit, the HMAC values would not match, indicating the data has been compromised.",    "origin": "Twitter",
+    "original_url": "https://twitter.com/milan_milanovic/status/1746902249559748681",
+    "medias": [
+      {
+        "name": "api_auths",
+        "filename": "2e32264d-c27d-4d03-867d-660c9c751843.mp4",
+        "type": "VIDEO"
+      }
+    ],
+    "urls": []
+  }
+
+]

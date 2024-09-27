@@ -1,15 +1,17 @@
 
 import re
 
+import magic
+
+from django.conf import settings
 from django.forms import modelformset_factory
-from django.http import HttpResponseNotAllowed, JsonResponse
+from django.http import HttpResponseNotAllowed, JsonResponse, HttpResponseBadRequest
 
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.parsers import MultiPartParser
 from rest_framework.response import Response
 
-from search_targets.models import SearchTarget
-from search_targets.models import SearchTarget, Media, URL
+from search_targets.models import SearchTarget, Media, MediaType, URL
 from search_targets.forms import SearchTargetForm, MediaForm
 from search_targets.paginations import PaginationWithTotalCount
 from search_targets.serializers import SearchTargetSerializer
@@ -68,17 +70,26 @@ class SearchTargetAPIView(ModelViewSet):
             image_formset = self.image_formset(my_post_dict, files=request.FILES)
             if image_formset.is_valid():
                 for media_file_name, media_file in image_formset.files.items():
+                    # Check mime type
+                    mime_type = magic.from_buffer(media_file.read(), mime=True)
+                    if mime_type not in settings.ACCEPTED_MIME_TYPES:
+                        raise ValueError(f"Unsupported media type {mime_type}")
+                    media_type = settings.ACCEPTED_MIME_TYPES[mime_type]
+
                     media = Media(
                         search_target=search_target,
                         file=media_file,
                         name=media_file_name,
+                        type=MediaType(media_type)
                     )
+
                     media.save()
 
             serializer = self.serializer_class(search_target)
             return Response(serializer.data)
         else:
             return HttpResponseNotAllowed(['POST'])
-    
+
+    @staticmethod
     def count():
         return SearchTarget.objects.count()
