@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from search_targets.models import Media, SearchTarget, URL
 
+
 class SearchTargetAdmin(admin.ModelAdmin):
     list_display = ("search_text", "insertion_date", "insertion_time")
 

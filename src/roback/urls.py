@@ -21,6 +21,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from search_targets import views as search_target_views
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 
 router = routers.SimpleRouter()
@@ -32,6 +33,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include(router.urls)),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
 ]
 
 if settings.DEBUG:

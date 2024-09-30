@@ -2,13 +2,10 @@
 from rest_framework.serializers import ModelSerializer
  
 from search_targets.models import SearchTarget
-from search_targets.serializers import MediaSerializer
 
 
 class SearchTargetSerializer(ModelSerializer):
 
-    media = MediaSerializer(many=True)
- 
     class Meta:
         model = SearchTarget
         fields = [
@@ -20,3 +17,5 @@ class SearchTargetSerializer(ModelSerializer):
             "original_url",
             "media"
         ]
+
+
