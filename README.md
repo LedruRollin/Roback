@@ -32,8 +32,8 @@ The exposed data can be viewed in a dedicated UI. The code relative to this fron
 
 ## Quality of life
 
-- Add documentation for exposed routes with a tool like Swagger
-- Makes the app easily retrievable and ran locally with a containerization tool like Docker
+- ~~Add documentation for exposed routes with a tool like Swagger~~ (done, see [this commit](https://github.com/LedruRollin/Roback/commit/8e6ce42b8be01eec38a8c4c16a613334f555cc98))
+- ~~Makes the app easily retrievable and ran locally with a containerization tool like Docker~~ (done, see [this commit](https://github.com/LedruRollin/Roback/commit/062ad4bd46f08baa78e0b9b6284f074b8ad54c6a))
 
 # Run the project (*WIP section*)
 
