@@ -11,7 +11,7 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.parsers import MultiPartParser
 from rest_framework.response import Response
 
-from search_targets.models import SearchTarget, Media, MediaType, URL
+from search_targets.models import Media, MediaType, SearchTarget, URL
 from search_targets.forms import SearchTargetForm, MediaForm
 from search_targets.paginations import PaginationWithTotalCount
 from search_targets.serializers import SearchTargetSerializer
