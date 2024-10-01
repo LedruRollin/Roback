@@ -35,10 +35,59 @@ The exposed data can be viewed in a dedicated UI. The code relative to this fron
 - ~~Add documentation for exposed routes with a tool like Swagger~~ (done, see [this commit](https://github.com/LedruRollin/Roback/commit/8e6ce42b8be01eec38a8c4c16a613334f555cc98))
 - ~~Makes the app easily retrievable and ran locally with a containerization tool like Docker~~ (done, see [this commit](https://github.com/LedruRollin/Roback/commit/062ad4bd46f08baa78e0b9b6284f074b8ad54c6a))
 
-# Run the project (*WIP section*)
+# Run the project in standalone
 
-You can retrieve the project via :
+This is a method to run the project in standalone, based on a local SQLite database. For a full build of the project  (front + PostgreSQL database, see dedicated section)
+1) Retrieve the code
+
+    You can retrieve the project via :
+
+    ```bash
+    cd my/projects/folder
+    git clone https://github.com/LedruRollin/Roback.git
+    cd Roback/
+    ```
+
+2) Setup the environment
+
+    To run, the app needs some environment variables. To setup them, you can create a `.env` file inside project folder
+
+    ```env
+    # In file Roback/.env 
+    ENGINE=django.db.backends.sqlite3
+    NAME=rosearch
+    MEDIA_ROOT=/home/roback/media
+    MEDIA_URL=media/
+    # To fill
+    SECRET_KEY=''  
+    ```
+
+    The SECRET_KEY variable is used internally by Django to encrypt personal app data (more info in [the official doc](https://docs.djangoproject.com/en/5.1/ref/settings/#std-setting-SECRET_KEY)).
+    You can generate your own by running this piece of code in a Django environment : 
+    
+    ```python3
+    from django.core.management.utils import get_random_secret_key
+    print(get_random_secret_key())
+    ```
+
+3) Launch the app
+
+    To launch the app, use Docker to run it inside a container thanks to local `Dockerfile` :
+    
+    ```bash
+    cd my/projects/folder/Roback
+    docker build . -t roback-image:v1.0.0  # Build app image
+    docker container run --name roback-container --env-file .env roback-image:v1.0.0   # Run container
+    ```
+
+Inside the container, you can then check everything's fine by retrieving seed data using the following commands :
 
 ```bash
-git clone https://github.com/LedruRollin/Roback.git
+apt-get install curl  # Install curl 
+curl -i http://localhost:8000/api/search_targets/
 ```
+
+# Run the whole project (WIP)
+
+An easy way to launch the whole project is upcoming.
+It will use Docker Compose to run the front, the back and the database.
