@@ -13,6 +13,7 @@ COPY requirements.txt $APP_HOME/requirements.txt
 RUN pip install --no-cache-dir -r $APP_HOME/requirements.txt
 
 COPY ./src $APP_HOME/src
+COPY .env $APP_HOME/.env
 COPY entrypoint.sh $APP_HOME/entrypoint.sh
 
 EXPOSE 8000
