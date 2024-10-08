@@ -58,8 +58,7 @@ This is a method to run the project in standalone, based on a local SQLite datab
     NAME=rosearch
     MEDIA_ROOT=/home/roback/media
     MEDIA_URL=media/
-    # To fill
-    SECRET_KEY=''  
+    SECRET_KEY=''    # To fill
     ```
 
     The SECRET_KEY variable is used internally by Django to encrypt personal app data (more info in [the official doc](https://docs.djangoproject.com/en/5.1/ref/settings/#std-setting-SECRET_KEY)).
