@@ -4,7 +4,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.core.files.base import ContentFile
 from rest_framework.test import APITestCase
 from rest_framework import status
-from unittest.mock import patch
 from datetime import datetime
 
 from search_targets.models import SearchTarget, Media
