@@ -7,7 +7,7 @@ class SearchTargetAdmin(admin.ModelAdmin):
     list_display = ("search_text", "insertion_date", "insertion_time")
 
 class MediaAdmin(admin.ModelAdmin):
-    list_display = ("search_target", "type", "file", "name")
+    list_display = ("search_target", "type", "file_path", "name")
 
 class URLAdmin(admin.ModelAdmin):
     list_display = ("url",)

@@ -36,5 +36,5 @@ class Media(Model):
     """ Model for a media (image, video, gif, etc)"""
     search_target = ForeignKey(SearchTarget, on_delete=CASCADE, related_name="media")
     name = TextField()
-    file = FileField(upload_to=get_media_path)
+    file_path = FileField(upload_to=get_media_path)
     type = TextField(choices=MediaType.choices, default='')

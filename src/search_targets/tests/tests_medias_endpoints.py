@@ -19,7 +19,7 @@ class TestMediasEndpoints(APITestCase):
         self.media = Media.objects.create(
             search_target=self.search_target,
             name="media_name",
-            file=ContentFile("test_file", name="test_file"),
+            file_path=ContentFile("test_file", name="test_file"),
             type="IMAGE"
         )
 
@@ -41,7 +41,7 @@ class TestMediasEndpoints(APITestCase):
     def test_post(self):
         input_post_data = {
           "name": "media_name2",
-          "file": ContentFile("test_file2", name="test_file2"),
+          "file_path": ContentFile("test_file2", name="test_file2"),
           "type": "VIDEO",
           "search_target": self.search_target.id
         }
@@ -71,7 +71,7 @@ class TestMediasEndpoints(APITestCase):
     def test_put(self):
         input_put_data = {
             "name": "media_name2",
-            "file": ContentFile("test_file2", name="test_file2"),
+            "file_path": ContentFile("test_file2", name="test_file2"),
             "type": "VIDEO",
             "search_target": self.search_target.id
         }
