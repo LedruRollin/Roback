@@ -7,7 +7,7 @@ from search_targets.serializers import MediaSerializer
 
 class SearchTargetSerializer(ModelSerializer):
 
-    media = MediaSerializer(many=True)
+    media = MediaSerializer(many=True, required=False)
 
     class Meta:
         model = SearchTarget

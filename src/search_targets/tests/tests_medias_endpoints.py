@@ -1,4 +1,5 @@
 
+from django.contrib.auth.models import User
 from django.test.client import MULTIPART_CONTENT, encode_multipart, BOUNDARY
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.files.base import ContentFile
@@ -14,14 +15,19 @@ class TestMediasEndpoints(APITestCase):
     mocked_date = datetime(2000, 1, 1, 2, 2, 2)
     endpoint = "/api/medias/"
 
-    def setUp(self) -> None:
-        self.search_target = SearchTarget.objects.create(search_text="test_search_targets")
+    @classmethod
+    def setUpTestData(cls):
+        cls.user = User.objects.create_user(username='test_user', password='test_pwd', is_staff=True)
+        cls.search_target = SearchTarget.objects.create(search_text="test_search_targets")
+
+    def setUp(self):
         self.media = Media.objects.create(
             search_target=self.search_target,
             name="media_name",
             file_path=ContentFile("test_file", name="test_file"),
             type="IMAGE"
         )
+        self.client.force_authenticate(self.user)
 
     def test_get_all(self):
         response = self.client.get(self.endpoint)
@@ -40,10 +46,10 @@ class TestMediasEndpoints(APITestCase):
 
     def test_post(self):
         input_post_data = {
-          "name": "media_name2",
-          "file_path": ContentFile("test_file2", name="test_file2"),
-          "type": "VIDEO",
-          "search_target": self.search_target.id
+            "name": "media_name2",
+            "file_path": ContentFile("test_file2", name="test_file2"),
+            "type": "VIDEO",
+            "search_target": self.search_target.id
         }
         response = self.client.post(
             self.endpoint,

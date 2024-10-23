@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.test.client import MULTIPART_CONTENT, encode_multipart, BOUNDARY
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.test import APITestCase
@@ -12,15 +13,20 @@ from .mocks import get_date_mocker, get_datetime_mocker
 
 class TestSearchTargetsEndpoints(APITestCase):
 
-    mocked_date = datetime(2000, 1, 1, 2, 2, 2)
     endpoint = "/api/search_targets/"
+    mocked_date = datetime(2000, 1, 1, 2, 2, 2)
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.user = User.objects.create_user(username='test_user', password='test_pwd', is_staff=True)
 
     @patch("datetime.date", get_date_mocker(mocked_date))
     @patch("datetime.datetime", get_datetime_mocker(mocked_date))
-    def setUp(self) -> None:
+    def setUp(self):
         self.test_search_target = SearchTarget.objects.create(
             search_text="test_text",
         )
+        self.client.force_authenticate(self.user)
 
     def test_get_all(self):
         response = self.client.get(self.endpoint)
@@ -70,7 +76,6 @@ class TestSearchTargetsEndpoints(APITestCase):
         put_text = "put_test_text"
         input_put_data = {
             "search_text": put_text,
-            "media": []
         }
         response = self.client.put(
             f"{self.endpoint}{str(self.test_search_target.id)}/",

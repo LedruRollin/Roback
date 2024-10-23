@@ -12,4 +12,5 @@ class MediaSerializer(ModelSerializer):
             "name",
             "file_path",
             "type",
+            "search_target",
         )
