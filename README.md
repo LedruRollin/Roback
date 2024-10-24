@@ -25,7 +25,7 @@ The exposed data can be viewed in a dedicated UI. The code relative to this fron
 
 ## Security
 
-- Add authentification
+- ~~Add authentification~~ (done, see [this commit](https://github.com/LedruRollin/Roback/commit/0603d9132396be1fc80392a694a731e2a919701d))
 - Add further safety checks for uploaded files
 - Makes the app suitable and safe for production : hide secrets, add automatic error reports, add backup mechanism, add proper CI/CD, etc...
 - Write the `pyproject.toml` file to setup build backend and project metadata ([link](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/))
