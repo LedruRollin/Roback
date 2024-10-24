@@ -12,4 +12,6 @@ class MediaAPIView(ModelViewSet):
     serializer_class = MediaSerializer
 
     def get_queryset(self):
-        return Media.objects.all()
+        queryset = Media.objects.all()
+        queryset = queryset.order_by("search_target")
+        return queryset
