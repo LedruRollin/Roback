@@ -5,10 +5,11 @@ import magic
 
 from django.conf import settings
 from django.forms import modelformset_factory
-from django.http import HttpResponseNotAllowed, JsonResponse, HttpResponseBadRequest
+from django.http import HttpResponseNotAllowed, JsonResponse
 
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.parsers import MultiPartParser
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from search_targets.models import Media, MediaType, SearchTarget, URL
@@ -27,6 +28,7 @@ def extract_url_from_text(text: str) -> List[str]:
 
 class SearchTargetAPIView(ModelViewSet):
 
+    permission_classes = [IsAuthenticated]
     pagination_class = PaginationWithTotalCount
     serializer_class = SearchTargetSerializer
     parser_classes = [MultiPartParser]

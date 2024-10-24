@@ -1,0 +1,2 @@
+
+from .token_serializer import AugmentedTokenObtainPairSerializer

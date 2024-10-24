@@ -1,5 +1,5 @@
 
-from rest_framework.serializers import ModelSerializer
+from rest_framework.serializers import ModelSerializer, FilePathField, SerializerMethodField
  
 from search_targets.models import Media
  
@@ -7,4 +7,10 @@ from search_targets.models import Media
 class MediaSerializer(ModelSerializer):
     class Meta:
         model = Media
-        fields = '__all__'
+        fields = (
+            "id",
+            "name",
+            "file_path",
+            "type",
+            "search_target",
+        )
