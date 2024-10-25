@@ -41,7 +41,7 @@ def create_seed_data():
                 media = Media(
                     search_target=search_target,
                     name=media_data["name"],
-                    file=django_media_file,
+                    file_path=django_media_file,
                     type=media_data["type"]
                 )
                 media.save()
